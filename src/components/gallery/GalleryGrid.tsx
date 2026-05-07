@@ -32,8 +32,10 @@ export default function GalleryGrid({ images }: Props) {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`text-xs tracking-[0.3em] uppercase transition-colors ${
-              active === cat ? 'text-[#c9a84c]' : 'text-[#444444] hover:text-[#888888]'
+            className={`p-4 text-xs tracking-[0.3em] uppercase transition-colors border ${
+              active === cat
+                ? 'border-[#c9a84c] text-[#c9a84c]'
+                : 'border-[#1e1e1e] text-[#444444] hover:border-[#888888] hover:text-[#888888]'
             }`}
           >
             {cat}
@@ -83,7 +85,7 @@ export default function GalleryGrid({ images }: Props) {
             tabIndex={0}
           >
             <button
-              className="absolute top-6 right-6 text-[#888888] text-xs tracking-widest uppercase hover:text-[#f0ede8] transition-colors"
+              className="absolute top-6 right-6 p-4 border border-[#444444] text-[#888888] text-xs tracking-widest uppercase hover:border-[#f0ede8] hover:text-[#f0ede8] transition-colors"
               onClick={closeLightbox}
               aria-label="Close preview"
             >

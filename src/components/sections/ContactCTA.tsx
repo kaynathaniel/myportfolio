@@ -25,7 +25,7 @@ export default function ContactCTA() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 border border-[#c9a84c] text-[#c9a84c] text-xs tracking-[0.3em] uppercase hover:bg-[#c9a84c] hover:text-[#080808] transition-all duration-300"
+            className="inline-block p-4 border border-[#c9a84c] text-[#c9a84c] text-xs tracking-[0.3em] uppercase hover:bg-[#c9a84c] hover:text-[#080808] transition-all duration-300"
           >
             Get In Touch
           </Link>

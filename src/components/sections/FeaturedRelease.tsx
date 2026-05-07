@@ -68,7 +68,7 @@ export default function FeaturedRelease({ release }: Props) {
                   href={release.links.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
+                  className="p-4 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
                 >
                   Spotify
                 </a>
@@ -78,7 +78,7 @@ export default function FeaturedRelease({ release }: Props) {
                   href={release.links.appleMusic}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.25em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
+                  className="p-4 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.25em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
                 >
                   Apple Music
                 </a>
@@ -88,7 +88,7 @@ export default function FeaturedRelease({ release }: Props) {
                   href={release.links.soundcloud}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.25em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
+                  className="p-4 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.25em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
                 >
                   SoundCloud
                 </a>

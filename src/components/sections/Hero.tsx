@@ -26,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[#f0ede8] mb-8"
+          className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-none tracking-tight text-[#f0ede8] mb-16"
         >
           SpiceKtrl
         </motion.h1>
@@ -35,7 +35,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-[#888888] text-sm md:text-base tracking-widest uppercase max-w-md mx-auto mb-12"
+          className="text-[#888888] text-sm md:text-base tracking-widest uppercase mb-10"
         >
           Lagos · London · The World
         </motion.p>
@@ -49,7 +49,7 @@ export default function Hero() {
             href={process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3.5 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
+            className="inline-block p-4 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
           >
             Explore the Sound
           </a>
