@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero'
 import AboutStatement from '@/components/sections/AboutStatement'
+import EpShowcase from '@/components/sections/EpShowcase'
 import FeaturedRelease from '@/components/sections/FeaturedRelease'
 import GalleryPreview from '@/components/sections/GalleryPreview'
 import ContactCTA from '@/components/sections/ContactCTA'
@@ -17,6 +18,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <AboutStatement />
+      <EpShowcase />
       {featuredRelease && <FeaturedRelease release={featuredRelease} />}
       {galleryImages.length > 0 && <GalleryPreview images={galleryImages} />}
       <ContactCTA />
