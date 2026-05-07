@@ -18,7 +18,7 @@ export default async function MusicPage() {
   ].filter(c => c.items.length > 0)
 
   return (
-    <div className="min-h-screen bg-[#080808] pt-12 md:pt-16 pb-24 md:pb-32">
+    <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
       <div className="site-container">
 
         {/* Section header */}
