@@ -12,8 +12,8 @@ interface Props {
 
 export default function GalleryPreview({ images }: Props) {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 bg-[#080808] border-t border-[#1e1e1e]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 md:py-32 bg-[#080808] border-t border-[#1e1e1e]">
+      <div className="site-container">
 
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16 md:mb-20">

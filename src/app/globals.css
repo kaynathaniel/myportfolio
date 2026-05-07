@@ -68,3 +68,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+.site-container {
+  margin-inline: 2.5vw;
+  max-width: 1880px;
+}

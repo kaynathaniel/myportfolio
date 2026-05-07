@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function BioPage() {
   return (
-    <div className="min-h-screen bg-[#080808] pt-12 md:pt-16 pb-24 md:pb-32 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#080808] pt-12 md:pt-16 pb-24 md:pb-32">
+      <div className="site-container">
 
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16 md:mb-20">

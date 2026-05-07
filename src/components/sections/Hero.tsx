@@ -52,11 +52,10 @@ export default function Hero() {
         </div>
 
         {/* ── LEFT — Text content */}
-        <div className="relative order-2 lg:order-1 flex flex-col justify-center
-                        px-6 md:px-12 lg:px-16
-                        pb-16 lg:pb-0
-                        -mt-20 lg:mt-0
-                        z-20">
+        <div
+          className="relative order-2 lg:order-1 flex flex-col justify-center pr-6 pb-16 lg:pb-0 -mt-20 lg:mt-0 z-20"
+          style={{ paddingLeft: '2.5vw' }}
+        >
 
           {/* ── Top group: role + name + divider */}
           <div>

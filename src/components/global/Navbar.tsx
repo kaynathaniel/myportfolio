@@ -36,7 +36,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="px-6 md:px-12 lg:px-16 flex items-center justify-between h-16 md:h-20">
+      <nav className="site-container flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="font-display text-lg tracking-widest uppercase text-[#f0ede8] hover:text-[#c9a84c] transition-colors">
           SpiceKtrl
         </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="md:hidden bg-[#080808]/95 backdrop-blur-md border-b border-[#1e1e1e]"
           >
-            <ul className="flex flex-col px-6 py-6 gap-6">
+            <ul className="flex flex-col py-6 gap-6" style={{ paddingLeft: '2.5vw', paddingRight: '2.5vw' }}>
               {links.map(({ href, label }) => (
                 <li key={href}>
                   <Link

@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 export default function ContactCTA() {
   return (
-    <section className="py-32 md:py-40 px-6 md:px-12 bg-[#080808] border-t border-[#1e1e1e]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 md:py-40 bg-[#080808] border-t border-[#1e1e1e]">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
