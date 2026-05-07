@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
-  { href: '/', label: 'Home' },
   { href: '/bio', label: 'Bio' },
   { href: '/photos', label: 'Photos' },
   { href: '/music', label: 'Music' },
