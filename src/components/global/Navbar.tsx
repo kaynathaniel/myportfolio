@@ -36,7 +36,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      <nav className="px-6 md:px-12 lg:px-16 flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="font-display text-lg tracking-widest uppercase text-[#f0ede8] hover:text-[#c9a84c] transition-colors">
           SpiceKtrl
         </Link>

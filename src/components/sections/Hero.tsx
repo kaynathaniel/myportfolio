@@ -54,64 +54,70 @@ export default function Hero() {
         {/* ── LEFT — Text content */}
         <div className="relative order-2 lg:order-1 flex flex-col justify-center
                         px-6 md:px-12 lg:px-16
-                        pb-20 lg:pb-0
+                        pb-16 lg:pb-0
                         -mt-20 lg:mt-0
                         z-20">
 
-          {/* Role label */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-[#c9a84c] text-xs tracking-[0.4em] uppercase mb-8"
-          >
-            Music Producer · DJ · Songwriter
-          </motion.p>
-
-          {/* Artist name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display leading-none tracking-tight text-[#f0ede8]"
-            style={{ fontSize: 'clamp(3.5rem, 7vw, 6.5rem)' }}
-          >
-            SpiceKtrl
-          </motion.h1>
-
-          {/* Gold reveal line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.7, delay: 0.7, ease: 'easeOut' }}
-            className="w-20 h-px bg-[#c9a84c] my-8 origin-left"
-          />
-
-          {/* Location */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-[#888888] text-sm tracking-[0.25em] uppercase mb-12"
-          >
-            Lagos · London · The World
-          </motion.p>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.95 }}
-          >
-            <a
-              href={process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block p-4 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
+          {/* ── Top group: role + name + divider */}
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-[#c9a84c] text-xs tracking-[0.4em] uppercase mb-6"
             >
-              Explore the Sound
-            </a>
-          </motion.div>
+              Music Producer · DJ · Songwriter
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display leading-none tracking-tight text-[#f0ede8]"
+              style={{ fontSize: 'clamp(3.5rem, 7vw, 6.5rem)' }}
+            >
+              SpiceKtrl
+            </motion.h1>
+
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.7, ease: 'easeOut' }}
+              className="w-20 h-px bg-[#c9a84c] mt-8 origin-left"
+            />
+          </div>
+
+          {/* ── Bottom group: bio + CTA */}
+          <div className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.88 }}
+              className="flex flex-col gap-4 mb-10"
+            >
+              <p className="text-[#888888] text-base leading-[1.75] max-w-sm">
+                Nigerian-born music producer, DJ, and songwriter based in the UK.
+              </p>
+              <p className="text-[#888888] text-base leading-[1.75] max-w-sm">
+                Fusing Afrobeats with Afro-electronic music to tell stories that move the soul.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.05 }}
+            >
+              <a
+                href={process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block p-4 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
+              >
+                Explore the Sound
+              </a>
+            </motion.div>
+          </div>
 
         </div>
 
