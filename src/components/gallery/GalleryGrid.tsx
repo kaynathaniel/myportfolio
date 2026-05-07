@@ -42,7 +42,7 @@ export default function GalleryGrid({ images }: Props) {
       </div>
 
       {/* Grid */}
-      <motion.div layout className="columns-2 md:columns-3 lg:columns-4 gap-1 space-y-1">
+      <motion.div layout className="columns-2 md:columns-3 lg:columns-4 [column-gap:4px]">
         <AnimatePresence>
           {filtered.map((img, i) => (
             <motion.div
@@ -52,7 +52,7 @@ export default function GalleryGrid({ images }: Props) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="relative break-inside-avoid overflow-hidden cursor-pointer group"
+              className="relative break-inside-avoid overflow-hidden cursor-pointer group mb-1"
               onClick={() => setLightbox(img)}
             >
               <Image

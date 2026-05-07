@@ -51,7 +51,7 @@ export default function ContactForm() {
       transition={{ duration: 0.6 }}
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="flex flex-col gap-8 max-w-xl"
+      className="flex flex-col gap-8 w-full"
     >
       <div>
         <input {...register('name')} placeholder="Your Name" className={inputClass} />

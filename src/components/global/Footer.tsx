@@ -1,11 +1,73 @@
+import Link from 'next/link'
+
+const navLinks = [
+  { href: '/bio', label: 'Bio' },
+  { href: '/music', label: 'Music' },
+  { href: '/photos', label: 'Photos' },
+  { href: '/contact', label: 'Contact' },
+]
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#1e1e1e] py-10 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[#444444] text-xs tracking-widest uppercase">
-        <span>© {year} SpiceKtrl. All rights reserved.</span>
-        <span>Music. Identity. Culture.</span>
+    <footer className="bg-[#080808] border-t border-[#1e1e1e]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
+
+        {/* Top row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12 md:mb-16">
+
+          {/* Brand */}
+          <div>
+            <p className="font-display text-xl text-[#f0ede8] mb-2">SpiceKtrl</p>
+            <p className="text-[#444444] text-xs tracking-[0.2em] uppercase">
+              Music Producer · DJ · Songwriter
+            </p>
+          </div>
+
+          {/* Nav */}
+          <nav>
+            <p className="text-[#444444] text-[10px] tracking-[0.3em] uppercase mb-4">Navigation</p>
+            <ul className="flex flex-col gap-3">
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-[#888888] text-xs tracking-[0.15em] uppercase hover:text-[#f0ede8] transition-colors duration-200"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* CTA */}
+          <div>
+            <p className="text-[#444444] text-[10px] tracking-[0.3em] uppercase mb-4">Bookings</p>
+            <p className="text-[#888888] text-xs leading-relaxed mb-5">
+              Available for DJ sets, live performances, studio sessions, and creative collaborations.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block text-xs tracking-[0.3em] uppercase text-[#c9a84c] hover:text-[#f0ede8] transition-colors duration-200"
+            >
+              Get In Touch →
+            </Link>
+          </div>
+
+        </div>
+
+        {/* Bottom row */}
+        <div className="border-t border-[#1e1e1e] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p className="text-[#444444] text-[10px] tracking-[0.2em] uppercase">
+            © {year} SpiceKtrl. All rights reserved.
+          </p>
+          <p className="text-[#444444] text-[10px] tracking-[0.2em] uppercase">
+            Lagos · London · The World
+          </p>
+        </div>
+
       </div>
     </footer>
   )

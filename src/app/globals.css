@@ -21,9 +21,9 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-accent-gold: var(--accent-gold);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-purple: var(--accent-purple);
   --color-border: var(--border);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 *,

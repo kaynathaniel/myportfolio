@@ -11,8 +11,14 @@ export const sanityClient = projectId
 
 const builder = sanityClient ? imageUrlBuilder(sanityClient) : null
 
-export function urlFor(source: SanityImage) {
-  if (!builder) return { url: () => '' }
+export function urlFor(source: SanityImage): ReturnType<NonNullable<typeof builder>['image']> {
+  if (!builder) {
+    const noop: ReturnType<NonNullable<typeof builder>['image']> = new Proxy(
+      { url: () => '' } as never,
+      { get: (_t, p) => (p === 'url' ? () => '' : () => noop) }
+    )
+    return noop
+  }
   return builder.image(source)
 }
 

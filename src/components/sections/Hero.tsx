@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -13,7 +12,7 @@ export default function Hero() {
       {/* Grain texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC42NScgbnVtT2N0YXZlcz0nMycgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbHRlcj0ndXJsKCNuKScgb3BhY2l0eT0nMSco+L3JlY3Q+PC9zdmc+')]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,20 +44,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link
-            href="/music"
-            className="px-8 py-3.5 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
+          <a
+            href={process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3.5 bg-[#c9a84c] text-[#080808] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#f0ede8] transition-colors duration-300"
           >
-            Listen Now
-          </Link>
-          <Link
-            href="/contact"
-            className="px-8 py-3.5 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.3em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
-          >
-            Book Now
-          </Link>
+            Explore the Sound
+          </a>
         </motion.div>
       </div>
 

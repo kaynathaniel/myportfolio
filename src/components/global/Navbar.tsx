@@ -31,7 +31,9 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#080808]/90 backdrop-blur-md border-b border-[#1e1e1e]' : 'bg-transparent'
+        scrolled || pathname !== '/'
+          ? 'bg-[#080808]/95 backdrop-blur-md border-b border-[#1e1e1e]'
+          : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
