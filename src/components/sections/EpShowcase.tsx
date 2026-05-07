@@ -43,8 +43,7 @@ export default function EpShowcase() {
               className="font-display text-[#f0ede8] leading-tight tracking-tight"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
             >
-              Drums &amp; Motion:<br />
-              <span className="italic text-[#888888]">The Awakening</span>
+              Drums &amp; Motion
             </h2>
 
             <motion.div
@@ -56,7 +55,7 @@ export default function EpShowcase() {
             />
 
             <p className="text-[#888888] text-base leading-[1.8] max-w-lg">
-              Drums &amp; Motion: The Awakening is an Afrofusion EP rooted in rhythm, emotion, and
+              Drums &amp; Motion is an Afrofusion EP rooted in rhythm, emotion, and
               movement. Blending Amapiano, Afrobeat, and soulful textures, the project reflects
               growth, motion, and progression. It&apos;s a body of work created to awaken the
               spirit and soundtrack both reflection and celebration.
