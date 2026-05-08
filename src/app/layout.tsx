@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/global/Navbar'
-import Footer from '@/components/global/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,11 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>
-        <Navbar />
-        <main className="pt-16 md:pt-20">{children}</main>
-        <Footer />
-      </body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   )
 }

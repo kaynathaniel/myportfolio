@@ -5,9 +5,10 @@ import { schemaTypes } from './sanity/schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Artist Portfolio',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  title: 'SpiceKtrl',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '9km5q6h3',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
+  basePath: '/studio',
   plugins: [structureTool(), visionTool()],
   schema: { types: schemaTypes },
 })
