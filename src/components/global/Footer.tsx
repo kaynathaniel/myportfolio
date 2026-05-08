@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { SiSpotify, SiApplemusic, SiYoutube, SiSoundcloud } from 'react-icons/si'
+
+const socials = [
+  { icon: SiSpotify, label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },
+  { icon: SiApplemusic, label: 'Apple Music', href: 'https://music.apple.com' },
+  { icon: SiYoutube, label: 'YouTube', href: 'https://youtube.com' },
+  { icon: SiSoundcloud, label: 'SoundCloud', href: 'https://soundcloud.com' },
+]
 
 const navLinks = [
   { href: '/bio', label: 'Bio' },
@@ -20,9 +28,23 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <p className="font-display text-xl text-[#f0ede8] mb-2">SpiceKtrl</p>
-            <p className="text-[#444444] text-xs tracking-[0.2em] uppercase">
+            <p className="text-[#444444] text-xs tracking-[0.2em] uppercase mb-5">
               Music Producer · DJ · Songwriter
             </p>
+            <div className="flex items-center gap-4">
+              {socials.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-[#444444] hover:text-[#c9a84c] transition-colors duration-200"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Nav */}

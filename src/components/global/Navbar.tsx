@@ -4,12 +4,20 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SiSpotify, SiApplemusic, SiYoutube, SiSoundcloud } from 'react-icons/si'
 
 const links = [
   { href: '/bio', label: 'Bio' },
   { href: '/photos', label: 'Photos' },
   { href: '/music', label: 'Music' },
   { href: '/contact', label: 'Contact' },
+]
+
+const socials = [
+  { icon: SiSpotify, label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },
+  { icon: SiApplemusic, label: 'Apple Music', href: 'https://music.apple.com' },
+  { icon: SiYoutube, label: 'YouTube', href: 'https://youtube.com' },
+  { icon: SiSoundcloud, label: 'SoundCloud', href: 'https://soundcloud.com' },
 ]
 
 export default function Navbar() {
@@ -41,20 +49,41 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-10">
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
+        <div className="hidden md:flex items-center gap-10">
+          <ul className="flex items-center gap-10">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`text-xs tracking-[0.2em] uppercase transition-colors ${
+                    pathname === href ? 'text-[#c9a84c]' : 'text-[#888888] hover:text-[#f0ede8]'
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Divider */}
+          <div className="w-px h-4 bg-[#1e1e1e]" />
+
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
+            {socials.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
                 href={href}
-                className={`text-xs tracking-[0.2em] uppercase transition-colors ${
-                  pathname === href ? 'text-[#c9a84c]' : 'text-[#888888] hover:text-[#f0ede8]'
-                }`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-[#444444] hover:text-[#c9a84c] transition-colors duration-200"
               >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <Icon size={15} />
+              </a>
+            ))}
+          </div>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -79,20 +108,36 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="md:hidden bg-[#080808]/95 backdrop-blur-md border-b border-[#1e1e1e]"
           >
-            <ul className="flex flex-col py-6 gap-6" style={{ paddingLeft: '2.5vw', paddingRight: '2.5vw' }}>
-              {links.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
+            <div className="flex flex-col py-6 gap-6" style={{ paddingLeft: '2.5vw', paddingRight: '2.5vw' }}>
+              <ul className="flex flex-col gap-6">
+                {links.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`text-sm tracking-[0.2em] uppercase transition-colors ${
+                        pathname === href ? 'text-[#c9a84c]' : 'text-[#888888]'
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center gap-5 pt-2 border-t border-[#1e1e1e]">
+                {socials.map(({ icon: Icon, label, href }) => (
+                  <a
+                    key={label}
                     href={href}
-                    className={`text-sm tracking-[0.2em] uppercase transition-colors ${
-                      pathname === href ? 'text-[#c9a84c]' : 'text-[#888888]'
-                    }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="text-[#444444] hover:text-[#c9a84c] transition-colors duration-200"
                   >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
