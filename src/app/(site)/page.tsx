@@ -2,26 +2,25 @@ import Hero from '@/components/sections/Hero'
 import AboutStatement from '@/components/sections/AboutStatement'
 import EpShowcase from '@/components/sections/EpShowcase'
 import SoundJournal from '@/components/sections/SoundJournal'
-import FeaturedRelease from '@/components/sections/FeaturedRelease'
 import GalleryPreview from '@/components/sections/GalleryPreview'
 import ContactCTA from '@/components/sections/ContactCTA'
-import { getFeaturedReleases, getFeaturedGalleryImages } from '@/lib/queries'
+import { getRecentReleases, getFeaturedGalleryImages } from '@/lib/queries'
 
 export default async function HomePage() {
-  const [releases, galleryImages] = await Promise.all([
-    getFeaturedReleases(),
+  const [recentReleases, galleryImages] = await Promise.all([
+    getRecentReleases(4),
     getFeaturedGalleryImages(),
   ])
 
-  const featuredRelease = releases[0] ?? null
+  const showcaseRelease = recentReleases[0] ?? null
+  const journalReleases = recentReleases.slice(1, 4)
 
   return (
     <>
       <Hero />
       <AboutStatement />
-      <EpShowcase />
-      <SoundJournal />
-      {featuredRelease && <FeaturedRelease release={featuredRelease} />}
+      <EpShowcase release={showcaseRelease} />
+      <SoundJournal releases={journalReleases} />
       {galleryImages.length > 0 && <GalleryPreview images={galleryImages} />}
       <ContactCTA />
     </>

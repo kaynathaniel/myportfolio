@@ -15,6 +15,15 @@ export async function getFeaturedReleases(): Promise<MusicRelease[]> {
   )
 }
 
+export async function getRecentReleases(limit: number = 4): Promise<MusicRelease[]> {
+  if (!sanityClient) return []
+  return sanityClient.fetch(
+    `*[_type == "musicRelease"] | order(releaseDate desc)[0...${limit}] {
+      _id, title, slug, releaseType, coverImage, releaseDate, description, featured, links
+    }`
+  )
+}
+
 export async function getAllReleases(): Promise<MusicRelease[]> {
   if (!sanityClient) return []
   return sanityClient.fetch(

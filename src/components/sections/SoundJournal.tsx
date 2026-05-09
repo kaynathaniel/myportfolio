@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { MusicRelease } from '@/types'
+import { urlFor } from '@/lib/sanity'
 
-const releases = [
+const FALLBACK_RELEASES = [
   {
     image: '/ep-out.jpg',
     title: 'Drums & Motion',
@@ -30,7 +32,21 @@ const releases = [
   },
 ]
 
-export default function SoundJournal() {
+interface Props {
+  releases: MusicRelease[]
+}
+
+export default function SoundJournal({ releases }: Props) {
+  const cards = releases.length > 0
+    ? releases.map((r) => ({
+        image: r.coverImage ? urlFor(r.coverImage).width(600).url() : '/ep-out.jpg',
+        title: r.title,
+        type: `${r.releaseType.toUpperCase()} · ${new Date(r.releaseDate).getFullYear()}`,
+        description: r.description ?? '',
+        href: r.links?.spotify ?? process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com',
+      }))
+    : FALLBACK_RELEASES
+
   return (
     <section className="py-24 md:py-32 bg-[#080808] border-t border-[#1e1e1e]">
       <div className="site-container">
@@ -55,9 +71,9 @@ export default function SoundJournal() {
 
         {/* Card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1e1e1e]">
-          {releases.map((release, i) => (
+          {cards.map((card, i) => (
             <motion.article
-              key={release.title}
+              key={card.title}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -67,8 +83,8 @@ export default function SoundJournal() {
               {/* Cover image */}
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={release.image}
-                  alt={release.title}
+                  src={card.image}
+                  alt={card.title}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -80,19 +96,19 @@ export default function SoundJournal() {
               <div className="flex flex-col flex-1 p-6 md:p-8 gap-4">
                 <div>
                   <p className="text-[#c9a84c] text-[0.6rem] tracking-[0.45em] uppercase mb-2">
-                    {release.type}
+                    {card.type}
                   </p>
                   <h3 className="font-display text-[#f0ede8] text-xl md:text-2xl leading-tight tracking-tight">
-                    {release.title}
+                    {card.title}
                   </h3>
                 </div>
 
                 <p className="text-[#888888] text-sm leading-[1.75] flex-1">
-                  {release.description}
+                  {card.description}
                 </p>
 
                 <a
-                  href={release.href}
+                  href={card.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="self-start mt-2 px-5 py-3 border border-[#1e1e1e] text-[#888888] text-[0.65rem] tracking-[0.35em] uppercase hover:border-[#c9a84c] hover:text-[#c9a84c] transition-colors duration-300"
