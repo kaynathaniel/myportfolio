@@ -35,9 +35,10 @@ export default function ReleaseCard({ release, index = 0 }: Props) {
           src={coverUrl}
           alt={release.title}
           fill
-          className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          className="object-cover group-hover:grayscale group-hover:scale-105 transition-all duration-700"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/90 via-[#080808]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
       </div>
       <p className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase mb-1">
         {release.releaseType} · {formatYear(release.releaseDate)}
