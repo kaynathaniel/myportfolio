@@ -50,3 +50,10 @@ export async function getAllGalleryImages(): Promise<GalleryImage[]> {
     }`
   )
 }
+
+export async function getBioImage(): Promise<Pick<GalleryImage, 'image' | 'alt'> | null> {
+  if (!sanityClient) return null
+  return sanityClient.fetch(
+    `*[_type == "galleryImage" && title == "bio image"][0] { image, alt }`
+  )
+}

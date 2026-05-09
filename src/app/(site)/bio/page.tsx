@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import { getBioImage } from '@/lib/queries'
+import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
   title: 'Bio',
   description: 'The story and creative background behind the artist — from Lagos to London.',
 }
 
-export default function BioPage() {
+export default async function BioPage() {
+  const bioImage = await getBioImage()
+
   return (
     <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
       <div className="site-container">
@@ -19,8 +24,24 @@ export default function BioPage() {
         {/* 2-col editorial layout on lg */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24 items-start">
 
-          {/* Left col — heading + highlights (sticky on desktop) */}
+          {/* Left col — image + heading + highlights (sticky on desktop) */}
           <div className="lg:sticky lg:top-32">
+
+            {/* Portrait image */}
+            {bioImage && (
+              <div className="relative aspect-[3/4] w-full overflow-hidden mb-10">
+                <Image
+                  src={urlFor(bioImage.image).width(600).url()}
+                  alt={bioImage.alt ?? 'SpiceKtrl'}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/60 via-transparent to-transparent" />
+              </div>
+            )}
+
             <h1 className="font-display text-5xl md:text-6xl text-[#f0ede8] leading-tight mb-12">
               The SpiceKtrl
               <br />
