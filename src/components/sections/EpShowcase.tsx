@@ -39,15 +39,16 @@ export default function EpShowcase({ release }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative aspect-square w-full overflow-hidden"
+            className="relative aspect-square w-full overflow-hidden group"
           >
             <Image
               src={imageSrc}
               alt={title}
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className="object-cover group-hover:grayscale group-hover:scale-105 transition-all duration-700"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#080808]/90 via-[#080808]/30 to-transparent transition-opacity duration-500" />
           </motion.div>
 
           {/* ── Right — text content */}

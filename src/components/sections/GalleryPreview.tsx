@@ -42,10 +42,10 @@ export default function GalleryPreview({ images }: Props) {
                 src={urlFor(img.image).width(800).height(800).url()}
                 alt={img.alt}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="object-cover group-hover:grayscale group-hover:scale-105 transition-all duration-700"
                 sizes={i === 0 ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
               />
-              <div className="absolute inset-0 bg-[#080808]/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#080808]/90 via-[#080808]/30 to-transparent transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>
