@@ -48,23 +48,24 @@ export default function BioPage() {
           {/* Right col — body text */}
           <div className="space-y-8 text-[#888888] text-sm leading-[2]">
             <p>
-              Born in Lagos and now based in London, SpiceKtrl is a music producer, DJ, and songwriter whose work sits at the intersection of Afrobeats, electronic music, and contemporary soul. With deep roots in Nigerian culture and the kinetic energy of the UK music scene, the sound is one built on contrast — the warmth of memory and the edge of the present.
+              Born in Lagos and now based in the UK, SpiceKtrl is a songwriter, DJ, and music producer whose work sits at the intersection of Afrobeats and Afro-electronic music — genre-fluid by nature, deeply human at its core. Rooted in the vibrant energy of Nigerian culture and the expansive sensibilities of global electronic sound, the music is one built on feeling: culture, emotion, and narrative woven into every frequency.
             </p>
             <p>
-              The creative journey began in Lagos, shaped by the city&apos;s rhythmic chaos and vibrant cultural life. Moving to the UK opened new horizons — exposure to bass culture, grime, and the underground electronic scene — which fed directly into a distinctive, layered production style that refuses to be confined to any single genre.
+              The connection to rhythm came early — an intuitive pull towards melody that resisted explanation. What began as spontaneous beat-making and melodic improvisation evolved into something more deliberate: a purposeful artistic journey grounded in sonic storytelling. Each track is a fusion of emotion, memory, and movement, crafted to resonate on both dancefloors and in headphones around the world.
             </p>
-
             <div className="border-l border-[#c9a84c] pl-6 py-2 my-10">
               <p className="font-display text-xl md:text-2xl text-[#f0ede8] italic leading-relaxed">
-                &ldquo;The music is always a conversation between where I&apos;m from and where I am.&rdquo;
+                Raised in Nigeria, SpiceKtrl cultivated a systems-thinking mind — a deep fluency in logic, structure, and the architecture of ideas — through his academic training in Computer Science.
               </p>
             </div>
-
             <p>
-              As a DJ, the approach is cinematic — each set a carefully considered journey through texture, rhythm, and atmosphere. As a producer, the focus is on creating spaces that feel both intimate and expansive: music that rewards deep listening but moves the body just as instinctively.
+              Relocating to the UK brought a Master&apos;s degree in Computing, and with it a sharpened discipline, a broadened perspective, and a deepened commitment to music as a tool for connection and cultural expression.
             </p>
             <p>
-              Available for studio sessions, live performances, DJ bookings, and creative collaborations.
+              His artistic identity is shaped by contrasts: tradition and innovation, introspection and rhythm, structure and freedom. His discography — EPs like Afroctrl and Drums &amp; Motion — reflects an ability to craft immersive sonic landscapes with clarity and intention. Whether producing in the studio or performing live as a DJ, the approach is cinematic: each set a carefully considered journey through texture, atmosphere, and feeling.
+            </p>
+            <p>
+              Driven by a vision to build community through sound, SpiceKtrl continues to push creative boundaries while staying true to his roots. The work is not just personal expression — it is a cultural offering, a conversation that speaks to the evolving identity of African music in a global context.
             </p>
           </div>
 
