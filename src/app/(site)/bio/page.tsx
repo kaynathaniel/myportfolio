@@ -48,22 +48,6 @@ export default async function BioPage() {
               <span className="italic text-[#888888]">Story</span>
             </h1>
 
-            <div className="border-t border-[#1e1e1e] pt-10">
-              <p className="text-[#444444] text-xs tracking-[0.4em] uppercase mb-6">Highlights</p>
-              <ul className="space-y-4">
-                {[
-                  'Released debut EP to critical acclaim',
-                  'Performed at major UK festivals',
-                  'Collaborations with leading UK and African artists',
-                  'Featured in international press',
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-3 text-[#888888] text-sm">
-                    <span className="text-[#c9a84c] shrink-0 mt-0.5">—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           {/* Right col — body text */}
