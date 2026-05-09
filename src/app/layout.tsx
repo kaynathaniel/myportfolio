@@ -14,22 +14,61 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  title: { default: 'SpiceKtrl', template: '%s | SpiceKtrl' },
-  description: 'SpiceKtrl — Nigerian-born music producer, DJ, and songwriter based in the UK.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    template: '%s | SpiceKtrl',
+  },
+  description:
+    'Official website of SpiceKtrl — UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
+  keywords: [
+    'SpiceKtrl',
+    'Afrobeats',
+    'Afro-electronic',
+    'music producer',
+    'DJ',
+    'songwriter',
+    'Nigerian artist UK',
+    'Amapiano',
+    'Afrofusion',
+    'UK music',
+  ],
+  authors: [{ name: 'SpiceKtrl', url: siteUrl }],
+  creator: 'SpiceKtrl',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
+    url: siteUrl,
     siteName: 'SpiceKtrl',
+    title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    description:
+      'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
+    images: [
+      {
+        url: '/hero-photo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+      },
+    ],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    description:
+      'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
+    images: ['/hero-photo.jpg'],
+  },
   robots: { index: true, follow: true },
+  alternates: { canonical: siteUrl },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en-GB" className={`${inter.variable} ${playfair.variable}`}>
       <body suppressHydrationWarning>{children}</body>
     </html>
   )

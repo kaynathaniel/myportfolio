@@ -2,9 +2,32 @@ import type { Metadata } from 'next'
 import GalleryGrid from '@/components/gallery/GalleryGrid'
 import { getAllGalleryImages } from '@/lib/queries'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+
 export const metadata: Metadata = {
   title: 'Photos',
-  description: 'A curated visual diary — portraits, live moments, and editorial imagery.',
+  description:
+    'Visual diary of SpiceKtrl — portraits, live performance shots, studio sessions, and editorial imagery.',
+  keywords: ['SpiceKtrl photos', 'SpiceKtrl gallery', 'music artist photography'],
+  alternates: { canonical: `${siteUrl}/photos` },
+  openGraph: {
+    title: 'SpiceKtrl — Photos & Visuals',
+    description: 'A curated visual diary — portraits, live moments, studio sessions, and editorial imagery.',
+    url: `${siteUrl}/photos`,
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Photos', item: `${siteUrl}/photos` },
+      ],
+    },
+  ],
 }
 
 export default async function PhotosPage() {
@@ -12,6 +35,10 @@ export default async function PhotosPage() {
 
   return (
     <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="site-container">
 
         {/* Section header */}

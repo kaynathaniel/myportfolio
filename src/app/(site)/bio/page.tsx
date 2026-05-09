@@ -3,9 +3,54 @@ import Image from 'next/image'
 import { getBioImage } from '@/lib/queries'
 import { urlFor } from '@/lib/sanity'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+
 export const metadata: Metadata = {
   title: 'Bio',
-  description: 'The story and creative background behind the artist — from Lagos to London.',
+  description:
+    'The story of SpiceKtrl — Nigerian-born music producer, DJ, and songwriter based in the UK. From Lagos to London, blending Afrobeats with Afro-electronic music.',
+  alternates: { canonical: `${siteUrl}/bio` },
+  openGraph: {
+    title: 'SpiceKtrl — Biography',
+    description:
+      'The story of SpiceKtrl — Nigerian-born music producer, DJ, and songwriter based in the UK. From Lagos to London.',
+    url: `${siteUrl}/bio`,
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#person`,
+      name: 'SpiceKtrl',
+      url: siteUrl,
+      jobTitle: 'Music Producer, DJ, Songwriter',
+      description:
+        'UK-based Nigerian songwriter, DJ, and music producer known for genre-fluid sound blending Afrobeats with Afro-electronic elements.',
+      nationality: { '@type': 'Country', name: 'Nigeria' },
+      homeLocation: { '@type': 'Place', name: 'United Kingdom' },
+      knowsAbout: ['Music Production', 'DJing', 'Songwriting', 'Afrobeats', 'Amapiano', 'Afro-electronic music'],
+      alumniOf: [
+        { '@type': 'EducationalOrganization', name: 'Computer Science (undergraduate)' },
+        { '@type': 'EducationalOrganization', name: 'Master\'s degree in Computing, United Kingdom' },
+      ],
+      sameAs: [
+        process.env.NEXT_PUBLIC_SPOTIFY_URL,
+        process.env.NEXT_PUBLIC_APPLE_MUSIC_URL,
+        process.env.NEXT_PUBLIC_YOUTUBE_URL,
+        process.env.NEXT_PUBLIC_SOUNDCLOUD_URL,
+      ].filter(Boolean),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Bio', item: `${siteUrl}/bio` },
+      ],
+    },
+  ],
 }
 
 export default async function BioPage() {
@@ -13,6 +58,10 @@ export default async function BioPage() {
 
   return (
     <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="site-container">
 
         {/* Section header */}
@@ -24,15 +73,14 @@ export default async function BioPage() {
         {/* 2-col editorial layout on lg */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24 items-start">
 
-          {/* Left col — image + heading + highlights (sticky on desktop) */}
+          {/* Left col — image + heading (sticky on desktop) */}
           <div className="lg:sticky lg:top-32">
 
-            {/* Portrait image */}
             {bioImage && (
               <div className="relative aspect-[3/4] w-full overflow-hidden mb-10">
                 <Image
                   src={urlFor(bioImage.image).width(600).url()}
-                  alt={bioImage.alt ?? 'SpiceKtrl'}
+                  alt={bioImage.alt ?? 'SpiceKtrl — Music Producer, DJ & Songwriter'}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 33vw"

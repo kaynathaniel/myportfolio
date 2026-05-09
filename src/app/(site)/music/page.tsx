@@ -2,9 +2,32 @@ import type { Metadata } from 'next'
 import ReleaseCard from '@/components/music/ReleaseCard'
 import { getAllReleases } from '@/lib/queries'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+
 export const metadata: Metadata = {
   title: 'Music',
-  description: 'Releases, DJ mixes, and streaming links from the artist.',
+  description:
+    'Discography of SpiceKtrl — EPs, singles, and mixes. Stream Afrobeats and Afro-electronic releases including Drums & Motion and Afroctrl on Spotify, Apple Music, and more.',
+  keywords: ['SpiceKtrl music', 'Drums and Motion EP', 'Afrobeats EP', 'SpiceKtrl discography', 'Afrofusion releases'],
+  alternates: { canonical: `${siteUrl}/music` },
+  openGraph: {
+    title: 'SpiceKtrl — Music & Releases',
+    description: 'Stream SpiceKtrl\'s full discography — genre-fluid Afrobeats and Afro-electronic EPs, singles, and mixes.',
+    url: `${siteUrl}/music`,
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Music', item: `${siteUrl}/music` },
+      ],
+    },
+  ],
 }
 
 export default async function MusicPage() {
@@ -19,9 +42,12 @@ export default async function MusicPage() {
 
   return (
     <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="site-container">
 
-        {/* Section header */}
         <div className="flex items-center gap-6 mb-10">
           <span className="text-[#444444] text-xs tracking-[0.4em] uppercase shrink-0">Discography</span>
           <div className="flex-1 h-px bg-[#1e1e1e]" />
@@ -40,6 +66,7 @@ export default async function MusicPage() {
         {categories.map(({ label, items }, idx) => (
           <section
             key={label}
+            aria-label={label}
             className={`pb-16 md:pb-20${idx < categories.length - 1 ? ' mb-16 md:mb-20 border-b border-[#1e1e1e]' : ''}`}
           >
             <div className="flex items-center gap-6 mb-10 md:mb-12">

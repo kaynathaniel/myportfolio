@@ -1,14 +1,48 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Book the artist or reach out for collaborations and creative projects.',
+  description:
+    'Book SpiceKtrl for DJ sets, live performances, studio sessions, or creative collaborations. Get in touch to discuss your project.',
+  keywords: ['book SpiceKtrl', 'SpiceKtrl DJ booking', 'music producer for hire', 'SpiceKtrl contact'],
+  alternates: { canonical: `${siteUrl}/contact` },
+  openGraph: {
+    title: 'Contact SpiceKtrl — Bookings & Collaborations',
+    description: 'Available for DJ sets, live performances, studio sessions, and creative collaborations.',
+    url: `${siteUrl}/contact`,
+  },
+  robots: { index: true, follow: true },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: `${siteUrl}/contact` },
+      ],
+    },
+    {
+      '@type': 'ContactPage',
+      name: 'Contact SpiceKtrl',
+      url: `${siteUrl}/contact`,
+      description: 'Book SpiceKtrl for DJ sets, live performances, studio sessions, or creative collaborations.',
+    },
+  ],
 }
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#080808] pt-28 md:pt-32 pb-24 md:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="site-container">
 
         {/* Section header */}
