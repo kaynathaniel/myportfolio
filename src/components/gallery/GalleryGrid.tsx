@@ -62,8 +62,9 @@ export default function GalleryGrid({ images }: Props) {
                 alt={img.alt}
                 width={600}
                 height={800}
-                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto group-hover:grayscale transition-all duration-700"
               />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#080808]/90 via-[#080808]/30 to-transparent transition-opacity duration-500" />
             </motion.div>
           ))}
         </AnimatePresence>
