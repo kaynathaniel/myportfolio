@@ -46,21 +46,12 @@ export const metadata: Metadata = {
     title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
     description:
       'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
-    images: [
-      {
-        url: '/hero-photo.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'SpiceKtrl — Music Producer, DJ & Songwriter',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
     description:
       'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
-    images: ['/hero-photo.jpg'],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
