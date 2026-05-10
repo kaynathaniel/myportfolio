@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { SiSpotify, SiApplemusic, SiSoundcloud, SiYoutube } from 'react-icons/si'
+import type { IconType } from 'react-icons'
 import { MusicRelease } from '@/types'
 import { urlFor } from '@/lib/sanity'
 import { formatYear } from '@/lib/utils'
@@ -11,11 +13,11 @@ interface Props {
   index?: number
 }
 
-const platformLabels: Record<string, string> = {
-  spotify: 'Spotify',
-  appleMusic: 'Apple Music',
-  soundcloud: 'SoundCloud',
-  youtube: 'YouTube',
+const platformMeta: Record<string, { label: string; Icon: IconType }> = {
+  spotify:    { label: 'Spotify',      Icon: SiSpotify },
+  appleMusic: { label: 'Apple Music',  Icon: SiApplemusic },
+  soundcloud: { label: 'SoundCloud',   Icon: SiSoundcloud },
+  youtube:    { label: 'YouTube',      Icon: SiYoutube },
 }
 
 export default function ReleaseCard({ release, index = 0 }: Props) {
@@ -44,18 +46,25 @@ export default function ReleaseCard({ release, index = 0 }: Props) {
         {release.releaseType} · {formatYear(release.releaseDate)}
       </p>
       <h3 className="font-display text-xl text-[#f0ede8] mb-3">{release.title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {streamingEntries.map(([platform, url]) => (
-          <a
-            key={platform}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] tracking-[0.2em] uppercase text-[#444444] hover:text-[#c9a84c] transition-colors border-b border-transparent hover:border-[#c9a84c] pb-px"
-          >
-            {platformLabels[platform] ?? platform}
-          </a>
-        ))}
+      <div className="flex flex-wrap gap-3">
+        {streamingEntries.map(([platform, url]) => {
+          const meta = platformMeta[platform]
+          const Icon = meta?.Icon
+          return (
+            <a
+              key={platform}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase text-[#444444] hover:text-[#c9a84c] transition-colors duration-200 group/link"
+            >
+              {Icon && <Icon className="w-3 h-3 shrink-0" />}
+              <span className="border-b border-transparent group-hover/link:border-[#c9a84c] pb-px transition-colors duration-200">
+                {meta?.label ?? platform}
+              </span>
+            </a>
+          )
+        })}
       </div>
     </motion.article>
   )
