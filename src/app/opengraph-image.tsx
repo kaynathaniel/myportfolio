@@ -141,7 +141,7 @@ export default async function OgImage() {
                 fontFamily: 'sans-serif',
               }}
             >
-              spicektrl.com
+              spicektrl.co.uk
             </div>
           </div>
         </div>

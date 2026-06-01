@@ -1,7 +1,14 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+
+const socialLinks = [
+  { label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },
+  { label: 'Apple Music', href: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL ?? 'https://music.apple.com' },
+  { label: 'YouTube', href: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? 'https://youtube.com' },
+  { label: 'SoundCloud', href: process.env.NEXT_PUBLIC_SOUNDCLOUD_URL ?? 'https://soundcloud.com' },
+]
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -69,21 +76,17 @@ export default function ContactPage() {
               <div>
                 <p className="text-[#444444] text-[10px] tracking-[0.4em] uppercase mb-2">Email</p>
                 <a
-                  href="mailto:booking@spicektrl.com"
+                  href="mailto:booking@spicektrl.co.uk"
                   className="text-[#888888] text-sm hover:text-[#c9a84c] transition-colors duration-200"
                 >
-                  booking@spicektrl.com
+                  booking@spicektrl.co.uk
                 </a>
               </div>
 
               <div>
                 <p className="text-[#444444] text-[10px] tracking-[0.4em] uppercase mb-4">Socials</p>
                 <div className="flex flex-col gap-3">
-                  {[
-                    { label: 'Instagram', href: '#' },
-                    { label: 'Spotify', href: '#' },
-                    { label: 'SoundCloud', href: '#' },
-                  ].map(({ label, href }) => (
+                  {socialLinks.map(({ label, href }) => (
                     <a
                       key={label}
                       href={href}

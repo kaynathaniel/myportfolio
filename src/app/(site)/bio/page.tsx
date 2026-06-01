@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { getBioImage } from '@/lib/queries'
 import { urlFor } from '@/lib/sanity'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
 
 export const metadata: Metadata = {
   title: 'Bio',
@@ -20,36 +20,10 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Person',
-      '@id': `${siteUrl}/#person`,
-      name: 'SpiceKtrl',
-      url: siteUrl,
-      jobTitle: 'Music Producer, DJ, Songwriter',
-      description:
-        'UK-based Nigerian songwriter, DJ, and music producer known for genre-fluid sound blending Afrobeats with Afro-electronic elements.',
-      nationality: { '@type': 'Country', name: 'Nigeria' },
-      homeLocation: { '@type': 'Place', name: 'United Kingdom' },
-      knowsAbout: ['Music Production', 'DJing', 'Songwriting', 'Afrobeats', 'Amapiano', 'Afro-electronic music'],
-      alumniOf: [
-        { '@type': 'EducationalOrganization', name: 'Computer Science (undergraduate)' },
-        { '@type': 'EducationalOrganization', name: 'Master\'s degree in Computing, United Kingdom' },
-      ],
-      sameAs: [
-        process.env.NEXT_PUBLIC_SPOTIFY_URL,
-        process.env.NEXT_PUBLIC_APPLE_MUSIC_URL,
-        process.env.NEXT_PUBLIC_YOUTUBE_URL,
-        process.env.NEXT_PUBLIC_SOUNDCLOUD_URL,
-      ].filter(Boolean),
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: 'Bio', item: `${siteUrl}/bio` },
-      ],
-    },
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Bio', item: `${siteUrl}/bio` },
   ],
 }
 

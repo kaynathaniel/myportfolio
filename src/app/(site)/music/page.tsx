@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import ReleaseCard from '@/components/music/ReleaseCard'
 import { getAllReleases } from '@/lib/queries'
+import { releasesGraph } from '@/lib/seo/release-schema'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
 
 export const metadata: Metadata = {
   title: 'Music',
@@ -17,21 +18,17 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: 'Music', item: `${siteUrl}/music` },
-      ],
-    },
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Music', item: `${siteUrl}/music` },
   ],
 }
 
 export default async function MusicPage() {
   const releases = await getAllReleases()
+  const jsonLd = releasesGraph(releases, breadcrumb)
 
   const categories = [
     { label: 'Albums', items: releases.filter(r => r.releaseType === 'album') },
