@@ -4,14 +4,14 @@ export interface SiteSettings {
   email: string
   instagramUrl?: string
   spotifyUrl?: string
-  soundcloudUrl?: string
+  boomplayUrl?: string
   youtubeUrl?: string
 }
 
 export interface StreamingLinks {
   spotify?: string
   appleMusic?: string
-  soundcloud?: string
+  boomplay?: string
   youtube?: string
 }
 

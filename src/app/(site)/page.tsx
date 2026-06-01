@@ -10,14 +10,14 @@ import { getRecentReleases, getFeaturedGalleryImages } from '@/lib/queries'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const metadata: Metadata = {
-  title: { absolute: 'SpiceKtrl — Music Producer, DJ & Songwriter' },
+  title: { absolute: 'SpiceKtrl: Music Producer, DJ & Songwriter' },
   description:
-    'Official website of SpiceKtrl — UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
+    'Official website of SpiceKtrl, UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
   alternates: { canonical: siteUrl },
   openGraph: {
-    title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    title: 'SpiceKtrl: Music Producer, DJ & Songwriter',
     description:
-      'Official website of SpiceKtrl — UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
+      'Official website of SpiceKtrl, UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
     url: siteUrl,
     images: [{ url: '/hero-photo.jpg', width: 1200, height: 630, alt: 'SpiceKtrl' }],
   },

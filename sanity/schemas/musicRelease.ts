@@ -25,7 +25,7 @@ export default defineType({
       fields: [
         defineField({ name: 'spotify', title: 'Spotify', type: 'url' }),
         defineField({ name: 'appleMusic', title: 'Apple Music', type: 'url' }),
-        defineField({ name: 'soundcloud', title: 'SoundCloud', type: 'url' }),
+        defineField({ name: 'boomplay', title: 'Boomplay', type: 'url' }),
         defineField({ name: 'youtube', title: 'YouTube', type: 'url' }),
       ],
     }),

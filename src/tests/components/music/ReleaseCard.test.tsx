@@ -34,7 +34,7 @@ const mockRelease: MusicRelease = {
   links: {
     spotify: 'https://open.spotify.com/album/123',
     appleMusic: 'https://music.apple.com/album/123',
-    soundcloud: '',
+    boomplay: '',
     youtube: '',
   },
 }
@@ -63,7 +63,7 @@ describe('ReleaseCard', () => {
 
   it('does not render links for empty URLs', () => {
     render(<ReleaseCard release={mockRelease} />)
-    expect(screen.queryByRole('link', { name: 'SoundCloud' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'Boomplay' })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'YouTube' })).not.toBeInTheDocument()
   })
 
@@ -77,7 +77,7 @@ describe('ReleaseCard', () => {
   it('renders with no streaming links gracefully', () => {
     const releaseNoLinks: MusicRelease = {
       ...mockRelease,
-      links: { spotify: '', appleMusic: '', soundcloud: '', youtube: '' },
+      links: { spotify: '', appleMusic: '', boomplay: '', youtube: '' },
     }
     render(<ReleaseCard release={releaseNoLinks} />)
     expect(screen.queryAllByRole('link').length).toBe(0)

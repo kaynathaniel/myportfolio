@@ -8,12 +8,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk
 export const metadata: Metadata = {
   title: 'Music',
   description:
-    'Discography of SpiceKtrl — EPs, singles, and mixes. Stream Afrobeats and Afro-electronic releases including Drums & Motion and Afroctrl on Spotify, Apple Music, and more.',
+    'Discography of SpiceKtrl: EPs, singles, and mixes. Stream Afrobeats and Afro-electronic releases including Drums & Motion and Afroctrl on Spotify, Apple Music, and more.',
   keywords: ['SpiceKtrl music', 'Drums and Motion EP', 'Afrobeats EP', 'SpiceKtrl discography', 'Afrofusion releases'],
   alternates: { canonical: `${siteUrl}/music` },
   openGraph: {
-    title: 'SpiceKtrl — Music & Releases',
-    description: 'Stream SpiceKtrl\'s full discography — genre-fluid Afrobeats and Afro-electronic EPs, singles, and mixes.',
+    title: 'SpiceKtrl: Music & Releases',
+    description: 'Stream SpiceKtrl\'s full discography of genre-fluid Afrobeats and Afro-electronic EPs, singles, and mixes.',
     url: `${siteUrl}/music`,
   },
 }

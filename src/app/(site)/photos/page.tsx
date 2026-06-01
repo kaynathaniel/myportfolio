@@ -7,12 +7,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk
 export const metadata: Metadata = {
   title: 'Photos',
   description:
-    'Visual diary of SpiceKtrl — portraits, live performance shots, studio sessions, and editorial imagery.',
+    'Visual diary of SpiceKtrl: portraits, live performance shots, studio sessions, and editorial imagery.',
   keywords: ['SpiceKtrl photos', 'SpiceKtrl gallery', 'music artist photography'],
   alternates: { canonical: `${siteUrl}/photos` },
   openGraph: {
-    title: 'SpiceKtrl — Photos & Visuals',
-    description: 'A curated visual diary — portraits, live moments, studio sessions, and editorial imagery.',
+    title: 'SpiceKtrl: Photos & Visuals',
+    description: 'A curated visual diary: portraits, live moments, studio sessions, and editorial imagery.',
     url: `${siteUrl}/photos`,
   },
 }

@@ -10,7 +10,7 @@ export default defineType({
     defineField({ name: 'email', title: 'Email', type: 'string', validation: r => r.required().email() }),
     defineField({ name: 'instagramUrl', title: 'Instagram URL', type: 'url' }),
     defineField({ name: 'spotifyUrl', title: 'Spotify URL', type: 'url' }),
-    defineField({ name: 'soundcloudUrl', title: 'SoundCloud URL', type: 'url' }),
+    defineField({ name: 'boomplayUrl', title: 'Boomplay URL', type: 'url' }),
     defineField({ name: 'youtubeUrl', title: 'YouTube URL', type: 'url' }),
   ],
 })

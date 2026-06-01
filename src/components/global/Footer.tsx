@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { SiSpotify, SiApplemusic, SiYoutube, SiSoundcloud } from 'react-icons/si'
+import { SiSpotify, SiApplemusic, SiYoutube } from 'react-icons/si'
+import BoomplayIcon from '@/components/icons/BoomplayIcon'
 
 const socials = [
   { icon: SiSpotify, label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },
   { icon: SiApplemusic, label: 'Apple Music', href: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL ?? 'https://music.apple.com' },
   { icon: SiYoutube, label: 'YouTube', href: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? 'https://youtube.com' },
-  { icon: SiSoundcloud, label: 'SoundCloud', href: process.env.NEXT_PUBLIC_SOUNDCLOUD_URL ?? 'https://soundcloud.com' },
+  { icon: BoomplayIcon, label: 'Boomplay', href: process.env.NEXT_PUBLIC_BOOMPLAY_URL ?? 'https://www.boomplay.com' },
 ]
 
 const navLinks = [

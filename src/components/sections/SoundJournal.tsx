@@ -11,7 +11,7 @@ const FALLBACK_RELEASES = [
     title: 'Drums & Motion',
     type: 'EP · 2024',
     description:
-      'An Afrofusion EP rooted in rhythm, emotion, and movement. Blending Amapiano, Afrobeat, and soulful textures — created to awaken the spirit.',
+      'An Afrofusion EP rooted in rhythm, emotion, and movement. Blending Amapiano, Afrobeat, and soulful textures, created to awaken the spirit.',
     href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com',
   },
   {

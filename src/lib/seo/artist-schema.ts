@@ -65,7 +65,7 @@ export function artistGraph() {
         '@id': WEBSITE_ID,
         url: SITE_URL,
         name: 'SpiceKtrl',
-        description: 'Official website of SpiceKtrl — music producer, DJ, and songwriter.',
+        description: 'Official website of SpiceKtrl, music producer, DJ, and songwriter.',
         publisher: { '@id': PERSON_ID },
         about: { '@id': ARTIST_ID },
         inLanguage: 'en-GB',

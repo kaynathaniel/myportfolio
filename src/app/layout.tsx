@@ -20,11 +20,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    default: 'SpiceKtrl: Music Producer, DJ & Songwriter',
     template: '%s | SpiceKtrl',
   },
   description:
-    'Official website of SpiceKtrl — UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
+    'Official website of SpiceKtrl, UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
   keywords: [
     'SpiceKtrl',
     'Afrobeats',
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: siteUrl,
     siteName: 'SpiceKtrl',
-    title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    title: 'SpiceKtrl: Music Producer, DJ & Songwriter',
     description:
       'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid sound blending Afrobeats with Afro-electronic elements.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpiceKtrl — Music Producer, DJ & Songwriter',
+    title: 'SpiceKtrl: Music Producer, DJ & Songwriter',
     description:
       'UK-based Nigerian songwriter, DJ, and music producer. Genre-fluid Afrobeats and Afro-electronic sound.',
   },

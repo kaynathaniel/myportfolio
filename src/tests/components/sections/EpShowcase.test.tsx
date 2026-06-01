@@ -29,7 +29,7 @@ const mockRelease: MusicRelease = {
   releaseDate: '2024-01-15',
   description: 'A test EP description for the showcase.',
   featured: true,
-  links: { spotify: 'https://open.spotify.com/test', appleMusic: '', soundcloud: '', youtube: '' },
+  links: { spotify: 'https://open.spotify.com/test', appleMusic: '', boomplay: '', youtube: '' },
 }
 
 describe('EpShowcase', () => {

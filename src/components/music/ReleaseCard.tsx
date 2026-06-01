@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { SiSpotify, SiApplemusic, SiSoundcloud, SiYoutube } from 'react-icons/si'
+import { SiSpotify, SiApplemusic, SiYoutube } from 'react-icons/si'
 import type { IconType } from 'react-icons'
+import BoomplayIcon from '@/components/icons/BoomplayIcon'
 import { MusicRelease } from '@/types'
 import { urlFor } from '@/lib/sanity'
 import { formatYear } from '@/lib/utils'
@@ -16,7 +17,7 @@ interface Props {
 const platformMeta: Record<string, { label: string; Icon: IconType }> = {
   spotify:    { label: 'Spotify',      Icon: SiSpotify },
   appleMusic: { label: 'Apple Music',  Icon: SiApplemusic },
-  soundcloud: { label: 'SoundCloud',   Icon: SiSoundcloud },
+  boomplay:   { label: 'Boomplay',     Icon: BoomplayIcon as IconType },
   youtube:    { label: 'YouTube',      Icon: SiYoutube },
 }
 

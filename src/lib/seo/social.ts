@@ -9,7 +9,7 @@ export const SOCIAL_URLS = {
   spotify: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com/artist/44UplAGnsqSLFwegyjFA2u',
   appleMusic: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL ?? 'https://music.apple.com/gb/artist/spicektrl/1849003488',
   youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL,
-  soundcloud: process.env.NEXT_PUBLIC_SOUNDCLOUD_URL,
+  boomplay: process.env.NEXT_PUBLIC_BOOMPLAY_URL,
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL,
   tiktok: process.env.NEXT_PUBLIC_TIKTOK_URL,
   twitter: process.env.NEXT_PUBLIC_TWITTER_URL,

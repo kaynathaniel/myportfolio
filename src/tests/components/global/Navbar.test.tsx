@@ -23,7 +23,10 @@ vi.mock('react-icons/si', () => ({
   SiSpotify: () => React.createElement('svg', { 'aria-label': 'Spotify' }),
   SiApplemusic: () => React.createElement('svg', { 'aria-label': 'Apple Music' }),
   SiYoutube: () => React.createElement('svg', { 'aria-label': 'YouTube' }),
-  SiSoundcloud: () => React.createElement('svg', { 'aria-label': 'SoundCloud' }),
+}))
+
+vi.mock('@/components/icons/BoomplayIcon', () => ({
+  default: () => React.createElement('svg', { 'aria-label': 'Boomplay' }),
 }))
 
 import Navbar from '@/components/global/Navbar'
@@ -86,6 +89,6 @@ describe('Navbar', () => {
     expect(screen.getAllByRole('link', { name: 'Spotify' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: 'Apple Music' }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: 'YouTube' }).length).toBeGreaterThan(0)
-    expect(screen.getAllByRole('link', { name: 'SoundCloud' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: 'Boomplay' }).length).toBeGreaterThan(0)
   })
 })

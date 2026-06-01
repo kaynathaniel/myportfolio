@@ -11,7 +11,10 @@ vi.mock('react-icons/si', () => ({
   SiSpotify: () => React.createElement('svg', { 'aria-label': 'Spotify' }),
   SiApplemusic: () => React.createElement('svg', { 'aria-label': 'Apple Music' }),
   SiYoutube: () => React.createElement('svg', { 'aria-label': 'YouTube' }),
-  SiSoundcloud: () => React.createElement('svg', { 'aria-label': 'SoundCloud' }),
+}))
+
+vi.mock('@/components/icons/BoomplayIcon', () => ({
+  default: () => React.createElement('svg', { 'aria-label': 'Boomplay' }),
 }))
 
 import Footer from '@/components/global/Footer'
@@ -45,7 +48,7 @@ describe('Footer', () => {
     expect(screen.getByRole('link', { name: 'Spotify' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Apple Music' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'YouTube' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'SoundCloud' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Boomplay' })).toBeInTheDocument()
   })
 
   it('renders current year in copyright', () => {

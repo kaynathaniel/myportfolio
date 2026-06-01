@@ -7,7 +7,7 @@ const socialLinks = [
   { label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },
   { label: 'Apple Music', href: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL ?? 'https://music.apple.com' },
   { label: 'YouTube', href: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? 'https://youtube.com' },
-  { label: 'SoundCloud', href: process.env.NEXT_PUBLIC_SOUNDCLOUD_URL ?? 'https://soundcloud.com' },
+  { label: 'Boomplay', href: process.env.NEXT_PUBLIC_BOOMPLAY_URL ?? 'https://www.boomplay.com' },
 ]
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: ['book SpiceKtrl', 'SpiceKtrl DJ booking', 'music producer for hire', 'SpiceKtrl contact'],
   alternates: { canonical: `${siteUrl}/contact` },
   openGraph: {
-    title: 'Contact SpiceKtrl — Bookings & Collaborations',
+    title: 'Contact SpiceKtrl: Bookings & Collaborations',
     description: 'Available for DJ sets, live performances, studio sessions, and creative collaborations.',
     url: `${siteUrl}/contact`,
   },
@@ -76,10 +76,10 @@ export default function ContactPage() {
               <div>
                 <p className="text-[#444444] text-[10px] tracking-[0.4em] uppercase mb-2">Email</p>
                 <a
-                  href="mailto:booking@spicektrl.co.uk"
+                  href="mailto:spicektrl@gmail.com"
                   className="text-[#888888] text-sm hover:text-[#c9a84c] transition-colors duration-200"
                 >
-                  booking@spicektrl.co.uk
+                  spicektrl@gmail.com
                 </a>
               </div>
 

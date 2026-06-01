@@ -29,7 +29,7 @@ const makeRelease = (overrides: Partial<MusicRelease> = {}): MusicRelease => ({
   releaseDate: '2024-05-01',
   description: 'A test track description.',
   featured: false,
-  links: { spotify: 'https://open.spotify.com/test', appleMusic: '', soundcloud: '', youtube: '' },
+  links: { spotify: 'https://open.spotify.com/test', appleMusic: '', boomplay: '', youtube: '' },
   ...overrides,
 })
 

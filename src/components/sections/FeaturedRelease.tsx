@@ -83,14 +83,14 @@ export default function FeaturedRelease({ release }: Props) {
                   Apple Music
                 </a>
               )}
-              {release.links.soundcloud && (
+              {release.links.boomplay && (
                 <a
-                  href={release.links.soundcloud}
+                  href={release.links.boomplay}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 border border-[#1e1e1e] text-[#888888] text-xs tracking-[0.25em] uppercase hover:border-[#888888] hover:text-[#f0ede8] transition-colors duration-300"
                 >
-                  SoundCloud
+                  Boomplay
                 </a>
               )}
             </div>
