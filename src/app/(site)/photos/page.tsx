@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import GalleryGrid from '@/components/gallery/GalleryGrid'
 import { getAllGalleryImages } from '@/lib/queries'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const metadata: Metadata = {
   title: 'Photos',

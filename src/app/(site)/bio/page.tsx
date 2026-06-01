@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { getBioImage } from '@/lib/queries'
 import { urlFor } from '@/lib/sanity'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const metadata: Metadata = {
   title: 'Bio',

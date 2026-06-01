@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 const socialLinks = [
   { label: 'Spotify', href: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? 'https://open.spotify.com' },

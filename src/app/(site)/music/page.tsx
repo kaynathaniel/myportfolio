@@ -3,7 +3,7 @@ import ReleaseCard from '@/components/music/ReleaseCard'
 import { getAllReleases } from '@/lib/queries'
 import { releasesGraph } from '@/lib/seo/release-schema'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const metadata: Metadata = {
   title: 'Music',

@@ -6,7 +6,7 @@ import { sameAsUrls } from './social'
 // MusicAlbum, FAQPage, etc.) should reference these @ids via byArtist,
 // about, or mainEntity.
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const ARTIST_ID = `${SITE_URL}/#artist`
 export const PERSON_ID = `${SITE_URL}/#person`

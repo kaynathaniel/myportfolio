@@ -2,7 +2,7 @@ import { MusicRelease } from '@/types'
 import { urlFor } from '@/lib/sanity'
 import { ARTIST_ID } from './artist-schema'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 const RELEASE_TYPE_MAP: Record<MusicRelease['releaseType'], string> = {
   single: 'SingleRelease',

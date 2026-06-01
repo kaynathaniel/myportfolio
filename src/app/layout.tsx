@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spicektrl.co.uk'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spicektrl.co.uk'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
